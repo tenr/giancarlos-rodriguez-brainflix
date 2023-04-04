@@ -1,8 +1,15 @@
+import companyLogo from "../../assets/logo/BrainFlix-logo.svg";
+
 function Header() {
   return (
-    <div>
-      <nav></nav>
-    </div>
+    <header>
+      <nav>
+        <div>
+          <img src={companyLogo} alt="BrainFlix logo" />
+        </div>
+        <div></div>
+      </nav>
+    </header>
   );
 }
 
