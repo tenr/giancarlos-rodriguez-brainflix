@@ -12,13 +12,13 @@ function Header() {
         </div>
         <div className="wrapper">
           <input className="wrapper__input"></input>
+          <img className="wrapper__mohan" src={mohan} />
+        </div>
+        <div className="wrapper__image">
           <button className="wrapper__button">
             <img src={uploadIcon} />
             <span>Upload</span>
           </button>
-        </div>
-        <div className="wrapper__image">
-          <img className="wrapper__mohan" src={mohan} />
         </div>
       </nav>
     </header>

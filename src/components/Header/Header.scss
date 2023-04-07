@@ -1,12 +1,18 @@
 .header {
   &__nav {
     display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-}
+  .wrapper {
+    display: flex;
+    align-items: center;
 
-.wrapper__mohan {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  object-fit: cover;
+    &__mohan {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
 }
