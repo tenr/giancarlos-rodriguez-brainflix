@@ -1,17 +1,17 @@
 import React from "react";
 import SuggestedVideo from "../SuggestedVideo/SuggestedVideo";
+import "../SuggestedList/SuggestedList.scss";
 
 function SuggestedList({ clickHandler, videos }) {
   return (
-    <section className="nav">
+    <section className="suggested">
+      <span className="suggested__heading">NEXT VIDEOS</span>
       {videos.map((video) => (
-        <div key={video.id}>
-          <SuggestedVideo
-            key={video.id}
-            video={video}
-            clickHandler={clickHandler}
-          />
-        </div>
+        <SuggestedVideo
+          key={video.id}
+          video={video}
+          clickHandler={clickHandler}
+        />
       ))}
     </section>
   );

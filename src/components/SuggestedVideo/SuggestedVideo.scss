@@ -1,0 +1,25 @@
+.card {
+  display: flex;
+  margin: 1rem 0;
+  //   border: 1px solid red;
+  //   &__left {
+  //     border: 1px solid rgb(0, 89, 255);
+  //   }
+  &__right {
+    // border: 1px solid rgb(32, 109, 11);
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__image {
+    width: 7rem;
+    height: 5rem;
+    border-radius: 5px;
+    align-self: center;
+  }
+  //   &__title {
+  //   }
+  //   &__author {
+  //   }
+}
