@@ -1,3 +1,7 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
 .header {
   &__nav {
     display: flex;
@@ -13,6 +17,20 @@
       height: 2.5rem;
       border-radius: 50%;
       object-fit: cover;
+    }
+    &__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      background-color: $BrainFlix-Blue;
+      border: none;
+      height: 2.5rem;
+      min-width: 9.375rem;
+      border-radius: 0.25rem;
+      &:hover {
+        background-color: $BrainFlix-DarkBlue;
+      }
     }
   }
 }

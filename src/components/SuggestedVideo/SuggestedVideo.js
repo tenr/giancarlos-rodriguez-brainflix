@@ -2,7 +2,7 @@ import React from "react";
 import "../SuggestedVideo/SuggestedVideo.scss";
 
 function SuggestedVideo({ clickHandler, video }) {
-  console.log(video);
+  // console.log(video);
   return (
     <div onClick={() => clickHandler(video.id)} className="card" key={video.id}>
       <div className="card__left">

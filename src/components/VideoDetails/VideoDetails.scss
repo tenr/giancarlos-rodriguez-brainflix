@@ -1,0 +1,48 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.details {
+  margin: 0 1rem;
+
+  &__title {
+    border-bottom: 1px solid $Mercury;
+    padding-bottom: 1.5rem;
+    @include m-pageHeader;
+  }
+  &__metric-wrapper {
+    display: flex;
+    padding: 1rem 0;
+    border-bottom: 1px solid $Mercury;
+  }
+  &__metric-1,
+  &__metric-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    gap: 1rem;
+  }
+  &__author {
+    font-weight: 600;
+  }
+  &__views-wrapper,
+  &__likes-wrapper {
+    display: flex;
+    gap: 0.5rem;
+  }
+  &__date,
+  &__view-count,
+  &__like-count {
+    color: $Silver;
+  }
+  &__description {
+    padding: 1rem 0;
+    @include m-bodyCopy;
+  }
+  &__icon {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}

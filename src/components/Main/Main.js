@@ -5,6 +5,7 @@ import videos from "../../data/videos.json";
 import SuggestedList from "../SuggestedList/SuggestedList";
 import Video from "../Video/Video";
 import VideoDetails from "../VideoDetails/VideoDetails";
+import CommentSection from "../CommentSection/CommentSection";
 
 function Main() {
   //stateVariable = selectedVideo, setter = setSelectedVideo
@@ -21,7 +22,9 @@ function Main() {
     setSelectedVideo(foundVideo);
   };
 
-  const filteredVideos = videos.filter((video) => video.id !== selectedVideo);
+  const filteredVideos = videos.filter(
+    (video) => video.id !== selectedVideo.id
+  );
 
   //
   const selectedVideoDetails = videoLong.find(
@@ -32,8 +35,8 @@ function Main() {
     <>
       <Video selectedVideo={selectedVideoDetails} />
       <div>
-        {/* this videodetails component below would take in a prop called selectedVideoDetails and then you pass those props into all the tag elements. this is going to use the likes, view etc for the main video  */}
-        <VideoDetails />
+        <VideoDetails selectedVideoDetails={selectedVideoDetails} />
+        <CommentSection selectedVideoDetails={selectedVideoDetails} />
         <SuggestedList clickHandler={clickHandler} videos={filteredVideos} />
       </div>
     </>
