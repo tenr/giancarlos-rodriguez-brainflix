@@ -16,18 +16,28 @@
   flex-direction: column;
   margin: 0rem 1rem;
   gap: 1.5rem;
+  color: $BrainFlix-Black;
   @include m-bodyCopy;
+  @include tablet-query {
+    margin: 0rem 2rem;
+  }
   &__card {
     display: flex;
 
     border-bottom: 1px solid $Mercury;
     padding-bottom: 1rem;
   }
+  &__date {
+    color: $Silver;
+  }
   &__grand-wrapper {
     display: flex;
     flex-direction: column;
 
     padding: 0.5rem;
+  }
+  &__user {
+    @include m-subHeader;
   }
   &__avy {
     max-height: 2rem;

@@ -1,0 +1,85 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.heading {
+  color: $BrainFlix-Black;
+  margin-bottom: 1rem;
+}
+.form {
+  display: flex;
+  border-bottom: 1px solid $Mercury;
+  margin-bottom: 1rem;
+  &__avy {
+    margin-top: 1.5rem;
+    @include tablet-query {
+      margin-top: 1rem;
+    }
+  }
+  &__label {
+    @include subHeader;
+    color: $Silver;
+    display: none;
+  }
+  &__input-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    @include tablet-query {
+      flex-direction: row;
+      padding-bottom: 1rem;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+  &__comment {
+    resize: none;
+    height: 6rem;
+    width: 14rem;
+    outline: none;
+    border: 1px solid $Mercury;
+    border-radius: 0.25rem;
+    @include tablet-query {
+      height: 2.25rem;
+      width: 23rem;
+    }
+    &::placeholder {
+      color: $BrainFlix-Black;
+      padding-top: 0.5rem;
+      padding-left: 0.5rem;
+    }
+    &:focus {
+      outline: 1px solid $BrainFlix-Black;
+      border: none;
+    }
+  }
+  &__button {
+    display: flex;
+    justify-content: flex-start;
+    gap: 3rem;
+    align-items: center;
+    color: $White;
+    @include bodyCopy;
+    margin-top: 1rem;
+    height: 2.25rem;
+    width: 14rem;
+    border-radius: 0.25rem;
+    background-color: $BrainFlix-Blue;
+    border: none;
+    margin-bottom: 1rem;
+
+    @include tablet-query {
+      align-self: flex-end;
+      width: 10rem;
+      gap: 1.2rem;
+    }
+    &:hover {
+      background-color: $BrainFlix-DarkBlue;
+      cursor: pointer;
+    }
+  }
+  &__button-icon {
+    margin-left: 0.5rem;
+  }
+}
