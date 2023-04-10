@@ -1,0 +1,70 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.details {
+  margin: 0rem 1rem;
+  @include bodyCopy;
+  @include tablet-query {
+    margin: 0rem 2rem;
+  }
+
+  &__title {
+    padding-bottom: 0.5rem;
+    color: $BrainFlix-Black;
+    @include m-pageHeader;
+  }
+  &__metric-wrapper {
+    display: flex;
+    padding: 1rem 0;
+    border-bottom: 1px solid $Mercury;
+  }
+  &__metric-1,
+  &__metric-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    gap: 1rem;
+  }
+  &__metric-1 {
+    @include tablet-query {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+  }
+
+  &__metric-2 {
+    @include tablet-query {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
+  &__author {
+    color: $BrainFlix-Black;
+    font-weight: 600;
+  }
+  &__views-wrapper,
+  &__likes-wrapper {
+    display: flex;
+    gap: 0.5rem;
+  }
+  &__date,
+  &__view-count,
+  &__like-count {
+    color: $Silver;
+  }
+  &__date {
+    padding-left: 2rem;
+  }
+  &__description {
+    padding: 1rem 0;
+    color: $BrainFlix-Black;
+    @include m-bodyCopy;
+  }
+  &__icon {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
