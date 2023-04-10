@@ -11,7 +11,7 @@ function VideoDetails({ selectedVideoDetails }) {
         <div className="details__metric-wrapper">
           <div className="details__metric-1">
             <span className="details__author">
-              {selectedVideoDetails.channel}
+              By {selectedVideoDetails.channel}
             </span>
             <span className="details__date">
               {new Date(selectedVideoDetails.timestamp).toLocaleDateString()}

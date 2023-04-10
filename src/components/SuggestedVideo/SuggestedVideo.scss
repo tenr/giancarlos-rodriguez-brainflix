@@ -1,25 +1,33 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
 .card {
   display: flex;
   margin: 1rem 0;
-  //   border: 1px solid red;
-  //   &__left {
-  //     border: 1px solid rgb(0, 89, 255);
-  //   }
+  color: $BrainFlix-Black;
+  @include tablet-query {
+    width: 38%;
+  }
+
   &__right {
     // border: 1px solid rgb(32, 109, 11);
     margin-left: 1rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    @include m-bodyCopy;
   }
   &__image {
     width: 7rem;
     height: 5rem;
     border-radius: 5px;
     align-self: center;
+    background-color: $Mercury;
   }
-  //   &__title {
-  //   }
-  //   &__author {
-  //   }
+  //font-weight: 600; i tried getting the weight of fonts right... not sure what issue is here?
+  &__title {
+    @include sectionHeader;
+  }
 }

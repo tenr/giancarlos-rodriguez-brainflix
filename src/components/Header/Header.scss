@@ -7,29 +7,80 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 1rem;
+    @include tablet-query {
+      flex-direction: row;
+      align-items: center;
+    }
   }
   .wrapper {
     display: flex;
     align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    @include tablet-query {
+      padding-top: 0;
+    }
 
+    &__input-group {
+      position: relative;
+    }
+    &__logo {
+    }
+    &__logo-image {
+      max-height: 1.5625rem;
+      max-width: 7.5rem;
+    }
+    &__icon {
+      position: absolute;
+      height: 0.8rem;
+      top: 0.7rem;
+      left: 0.5rem;
+    }
+    &__input {
+      padding-left: 1.8rem;
+      border-radius: 0.25rem;
+      border: 1px solid $Mercury;
+      outline: $Alabaster;
+      min-width: 15rem;
+      min-height: 2.25rem;
+      @include m-bodyCopy;
+      &::placeholder {
+        color: $BrainFlix-Black;
+      }
+    }
     &__mohan {
       width: 2.5rem;
       height: 2.5rem;
       border-radius: 50%;
       object-fit: cover;
     }
+    &__image {
+      @include tablet-query {
+        order: 3;
+      }
+    }
     &__button {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
-      color: #fff;
+      gap: 5.5rem;
+      font-weight: 600;
+      padding-left: 0.8rem;
+      width: 18.75rem;
+      min-width: 9.375rem;
+      height: 2.5rem;
+      color: $White;
       background-color: $BrainFlix-Blue;
       border: none;
-      height: 2.5rem;
-      min-width: 9.375rem;
       border-radius: 0.25rem;
+      margin-top: 1rem;
       &:hover {
         background-color: $BrainFlix-DarkBlue;
+      }
+      @include tablet-query {
+        order: 0;
+        margin-top: 0;
       }
     }
   }

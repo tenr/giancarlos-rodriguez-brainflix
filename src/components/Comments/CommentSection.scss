@@ -1,0 +1,45 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.form {
+  &__avy {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+.comments {
+  //   display: flex;
+  flex-direction: column;
+  margin: 0rem 1rem;
+  gap: 1.5rem;
+  @include m-bodyCopy;
+  &__card {
+    display: flex;
+
+    border-bottom: 1px solid $Mercury;
+    padding-bottom: 1rem;
+  }
+  &__grand-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0.5rem;
+  }
+  &__avy {
+    max-height: 2rem;
+    min-width: 2rem;
+    border-radius: 50%;
+    background-color: $Mercury;
+    margin-top: 0.5rem;
+  }
+  &__wrapper-1 {
+    display: flex;
+
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+}

@@ -4,11 +4,15 @@
 @use "../../styles/partials/variables" as *;
 
 .details {
-  margin: 0 1rem;
+  margin: 0rem 1rem;
+  @include bodyCopy;
+  @include tablet-query {
+    margin: 0rem 2rem;
+  }
 
   &__title {
-    border-bottom: 1px solid $Mercury;
-    padding-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    color: $BrainFlix-Black;
     @include m-pageHeader;
   }
   &__metric-wrapper {
@@ -24,7 +28,21 @@
     width: 90%;
     gap: 1rem;
   }
+  &__metric-1 {
+    @include tablet-query {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+  }
+
+  &__metric-2 {
+    @include tablet-query {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
   &__author {
+    color: $BrainFlix-Black;
     font-weight: 600;
   }
   &__views-wrapper,
@@ -37,8 +55,12 @@
   &__like-count {
     color: $Silver;
   }
+  &__date {
+    padding-left: 2rem;
+  }
   &__description {
     padding: 1rem 0;
+    color: $BrainFlix-Black;
     @include m-bodyCopy;
   }
   &__icon {

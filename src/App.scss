@@ -2,10 +2,3 @@
 @use "/src/styles/partials/typography" as *;
 @use "/src/styles/partials/mixins" as *;
 @use "/src/styles/partials/variables" as *;
-
-.mohan {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  object-fit: cover;
-}

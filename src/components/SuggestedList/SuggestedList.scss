@@ -1,3 +1,14 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
 .suggested {
-  margin: 0 1rem;
+  margin: 2rem 1rem;
+
+  &__heading {
+    color: $Silver;
+    //font-weight: 600; i tried getting the weight of fonts right... not sure what issue is here?
+    @include sectionHeader;
+  }
 }
