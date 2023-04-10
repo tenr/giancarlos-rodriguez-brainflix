@@ -56,7 +56,9 @@
     color: $Silver;
   }
   &__date {
-    padding-left: 2rem;
+    @include tablet-query {
+      padding-left: 2rem;
+    }
   }
   &__description {
     padding: 1rem 0;
