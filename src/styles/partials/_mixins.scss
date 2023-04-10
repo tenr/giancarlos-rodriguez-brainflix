@@ -1,0 +1,79 @@
+@use "variables" as *;
+
+@mixin mobile-query {
+  @media (min-width: map-get($breakpoints, "mobile")) {
+    @content;
+  }
+}
+@mixin tablet-query {
+  @media (min-width: map-get($breakpoints, "tablet")) {
+    @content;
+  }
+}
+@mixin desktop-query {
+  @media (min-width: map-get($breakpoints, "desktop")) {
+    @content;
+  }
+}
+
+//Mobile Text
+@mixin m-pageHeader {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+@mixin m-sectionHeader {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+@mixin m-subHeader {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+}
+
+@mixin m-bodyCopy {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+@mixin m-labels_buttons {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+//Tablet & Desktop Text
+@mixin pageHeader {
+  font-size: 3.75rem;
+  line-height: 4.25rem;
+  font-weight: 700;
+}
+
+@mixin sectionHeader {
+  font-size: 0.75rem;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+@mixin subHeader {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 700;
+}
+
+@mixin bodyCopy {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+}
+
+@mixin labels_buttons {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+} ;
