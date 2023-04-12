@@ -1,0 +1,24 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.upload__publish-btn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5.5rem;
+  font-weight: 600;
+  padding-left: 0.8rem;
+  width: 18.75rem;
+  min-width: 9.375rem;
+  height: 2.5rem;
+  color: $White;
+  background-color: $BrainFlix-Blue;
+  border: none;
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+  &:hover {
+    background-color: $BrainFlix-DarkBlue;
+  }
+}
