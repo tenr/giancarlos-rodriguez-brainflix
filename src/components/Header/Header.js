@@ -3,7 +3,7 @@ import companyLogo from "../../assets/logo/BrainFlix-logo.svg";
 import uploadIcon from "../../assets/icons/upload.svg";
 import mohan from "../../assets/images/Mohan-muruge.jpg";
 import finder from "../../assets/icons/search.svg";
-// import { userNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Header() {
   //initializing react router
@@ -16,11 +16,13 @@ function Header() {
     <header className="header">
       <nav className="header__nav">
         <div className="header__logo">
-          <img
-            className="header__logo-image"
-            src={companyLogo}
-            alt="BrainFlix logo"
-          />
+          <Link to="/">
+            <img
+              className="header__logo-image"
+              src={companyLogo}
+              alt="BrainFlix logo"
+            />
+          </Link>
         </div>
         <div className="wrapper">
           <div className="wrapper__input-group">
@@ -41,10 +43,12 @@ function Header() {
           <img className="wrapper__mohan" src={mohan} alt="mohan" />
         </div>
         {/* Using react router to navigate to page */}
-        <button className="wrapper__button">
-          <img src={uploadIcon} />
-          <span>Upload</span>
-        </button>
+        <Link to="/upload">
+          <button className="wrapper__button">
+            <img src={uploadIcon} />
+            <span>Upload</span>
+          </button>
+        </Link>
       </nav>
     </header>
   );

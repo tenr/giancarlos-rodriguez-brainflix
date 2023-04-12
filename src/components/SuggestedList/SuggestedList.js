@@ -1,6 +1,8 @@
 import React from "react";
 import SuggestedVideo from "../SuggestedVideo/SuggestedVideo";
 import "../SuggestedList/SuggestedList.scss";
+// import axios from 'axios'
+import { useState, useEffect } from "react";
 
 function SuggestedList({ clickHandler, videos }) {
   return (

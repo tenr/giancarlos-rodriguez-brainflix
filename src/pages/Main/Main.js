@@ -2,10 +2,10 @@ import React from "react";
 import { useState } from "react";
 import videoLong from "../../data/video-details.json";
 import videos from "../../data/videos.json";
-import SuggestedList from "../SuggestedList/SuggestedList";
-import Video from "../Video/Video";
-import VideoDetails from "../VideoDetails/VideoDetails";
-import CommentSection from "../Comments/CommentSection";
+import SuggestedList from "../../components/SuggestedList/SuggestedList";
+import Video from "../../components/Video/Video";
+import VideoDetails from "../../components/VideoDetails/VideoDetails";
+import CommentSection from "../../components/Comments/CommentSection";
 
 function Main() {
   //stateVariable = selectedVideo, setter = setSelectedVideo
