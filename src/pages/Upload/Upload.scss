@@ -41,14 +41,15 @@
   }
   &__description-input {
     height: 5rem;
-    padding: 0rem;
+    padding-top: 1rem;
   }
   &__title-label,
   &__description-label {
     display: flex;
     flex-direction: column;
     color: $Silver;
-    margin-top: 1rem;
+    gap: 0.5rem;
+    padding-top: 1.5rem;
   }
 
   &__publish-btn {
@@ -74,5 +75,6 @@
     background-color: $White;
     outline: none;
     border: none;
+    padding-top: 1.5rem;
   }
 }
