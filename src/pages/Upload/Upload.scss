@@ -3,22 +3,76 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
 
-.upload__publish-btn {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 5.5rem;
-  font-weight: 600;
-  padding-left: 0.8rem;
-  width: 18.75rem;
-  min-width: 9.375rem;
-  height: 2.5rem;
-  color: $White;
-  background-color: $BrainFlix-Blue;
-  border: none;
-  border-radius: 0.25rem;
-  margin-top: 1rem;
-  &:hover {
-    background-color: $BrainFlix-DarkBlue;
+.upload {
+  padding-top: 1rem;
+  color: $BrainFlix-Black;
+  margin: 1rem 1rem;
+  //add a border bottom to the header to get rid of this red
+  border-top: 1px solid red;
+  &__heading {
+    @include m-pageHeader;
+    // font-weight: 600; change this weight to get closer tp mock up
+    padding-bottom: 1rem;
+  }
+  &__thumbnail-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__thumbnail-heading {
+    // font-weight: 600; change this weight to get closer tp mock up
+    @include m-subHeader;
+    color: $Silver;
+    padding-bottom: 0.5rem;
+  }
+  &__thumbnail-img {
+    height: 10rem;
+    object-fit: fill;
+    border-radius: 0.3125rem;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title-input,
+  &__description-input {
+    color: $BrainFlix-Black;
+  }
+  &__description-input {
+    height: 5rem;
+    padding: 0rem;
+  }
+  &__title-label,
+  &__description-label {
+    display: flex;
+    flex-direction: column;
+    color: $Silver;
+    margin-top: 1rem;
+  }
+
+  &__publish-btn {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5.5rem;
+    font-weight: 600;
+    padding-left: 0.8rem;
+    width: 18.75rem;
+    min-width: 9.375rem;
+    height: 2.5rem;
+    color: $White;
+    background-color: $BrainFlix-Blue;
+    border: none;
+    border-radius: 0.25rem;
+    margin-top: 1rem;
+    &:hover {
+      background-color: $BrainFlix-DarkBlue;
+    }
+  }
+  &__cancel-btn {
+    background-color: $White;
+    outline: none;
+    border: none;
   }
 }

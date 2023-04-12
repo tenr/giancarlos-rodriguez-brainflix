@@ -7,10 +7,10 @@ import uploadIcon from "../../assets/icons/upload.svg";
 function Upload() {
   return (
     <section className="upload">
-      <h1>Upload Video</h1>
+      <h1 className="upload__heading">Upload Video</h1>
 
       <div className="upload__thumbnail-wrapper">
-        <span className="uplaod__thumbnail-heading">VIDEO THUMNAIL</span>
+        <span className="upload__thumbnail-heading">VIDEO THUMBNAIL</span>
         <img src={thumbnail} alt="" className="upload__thumbnail-img" />
       </div>
 
@@ -25,6 +25,7 @@ function Upload() {
         </label>
 
         <label htmlFor="" className="upload__description-label">
+          ADD A VIDEO DESCRIPTION
           <input
             placeholder="Add a description to your video"
             type="text"
