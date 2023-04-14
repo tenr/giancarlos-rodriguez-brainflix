@@ -1,10 +1,10 @@
 import React from "react";
 import "../SuggestedVideo/SuggestedVideo.scss";
 
-function SuggestedVideo({ clickHandler, video }) {
+function SuggestedVideo({ video }) {
   // console.log(video);
   return (
-    <div onClick={() => clickHandler(video.id)} className="card" key={video.id}>
+    <div className="card" key={video.id}>
       <div className="card__left">
         <img className="card__image" src={video.image} alt="" />
       </div>
