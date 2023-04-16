@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/video:id" element={<Main />} />
+        <Route path="/video/:id" element={<Main />} />
         <Route path="/upload" element={<Upload />} />
       </Routes>
     </>
