@@ -4,11 +4,11 @@
 @use "../../styles/partials/variables" as *;
 
 .upload {
-  padding-top: 1rem;
   color: $BrainFlix-Black;
-  margin: 1rem 1rem;
+  padding: 2rem 1rem;
   //add a border bottom to the header to get rid of this red
-  border-top: 1px solid red;
+  border-top: 1px solid $Mercury;
+  margin-top: 1rem;
   &__heading {
     @include m-pageHeader;
     // font-weight: 600; change this weight to get closer tp mock up
@@ -18,6 +18,9 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    @include tablet-query {
+      align-content: flex-start;
+    }
   }
   &__thumbnail-heading {
     // font-weight: 600; change this weight to get closer tp mock up
@@ -29,6 +32,10 @@
     height: 10rem;
     object-fit: fill;
     border-radius: 0.3125rem;
+    @include tablet-query {
+      width: 60%;
+      height: 15rem;
+    }
   }
   &__form {
     display: flex;
@@ -37,11 +44,21 @@
 
   &__title-input,
   &__description-input {
+    height: 2rem;
     color: $BrainFlix-Black;
+    outline: $Mercury;
+    border: 1px solid $Mercury;
+    background-color: $Alabaster;
+    border-radius: 0.25rem;
+    padding-left: 0.5rem;
   }
   &__description-input {
     height: 5rem;
-    padding-top: 1rem;
+    // padding-top: 1rem;
+  }
+  &__description-input::placeholder {
+    align-self: flex-start;
+    padding-left: 0.5rem;
   }
   &__title-label,
   &__description-label {
@@ -50,6 +67,17 @@
     color: $Silver;
     gap: 0.5rem;
     padding-top: 1.5rem;
+  }
+  &__btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include tablet-query {
+      flex-direction: row;
+      gap: 3rem;
+      border-top: 1px solid $Mercury;
+      margin-top: 1rem;
+    }
   }
 
   &__publish-btn {
@@ -76,5 +104,6 @@
     outline: none;
     border: none;
     padding-top: 1.5rem;
+    color: $BrainFlix-Blue;
   }
 }

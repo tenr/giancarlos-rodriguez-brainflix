@@ -3,8 +3,6 @@ import "../../styles/partials/_globals.scss";
 import "../Upload/Upload.scss";
 import thumbnail from "../../assets/images/Upload-video-preview.jpg";
 import uploadIcon from "../../assets/icons/upload.svg";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
 
 function Upload() {
   // attempt to get pop-up
@@ -46,15 +44,16 @@ function Upload() {
             className="upload__description-input"
           />
         </label>
+        <div className="upload__btn-wrapper">
+          <button className="upload__publish-btn" type="submit">
+            <img src={uploadIcon} />
+            <span>Publish</span>
+          </button>
 
-        <button className="upload__publish-btn" type="submit">
-          <img src={uploadIcon} />
-          <span>Publish</span>
-        </button>
-
-        <button className="upload__cancel-btn" type="reset">
-          CANCEL
-        </button>
+          <button className="upload__cancel-btn" type="reset">
+            CANCEL
+          </button>
+        </div>
       </form>
     </section>
   );
