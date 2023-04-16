@@ -2,3 +2,17 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
+
+.components {
+  @include desktop-query {
+    display: flex;
+  }
+
+  &__left {
+    @include desktop-query {
+      width: 70%;
+      border-right: 1px solid $Mercury;
+      margin-left: 6rem;
+    }
+  }
+}

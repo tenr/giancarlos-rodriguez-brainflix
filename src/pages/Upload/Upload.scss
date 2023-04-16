@@ -7,12 +7,19 @@
   color: $BrainFlix-Black;
   padding: 2rem 1rem;
   //add a border bottom to the header to get rid of this red
-  border-top: 1px solid $Mercury;
+  border-top: 2px solid $Mercury;
   margin-top: 1rem;
   &__heading {
     @include m-pageHeader;
     // font-weight: 600; change this weight to get closer tp mock up
     padding-bottom: 1rem;
+
+    border-bottom: 2px solid $Mercury;
+  }
+  &__desktop-wrapper {
+    @include desktop-query {
+      display: flex;
+    }
   }
   &__thumbnail-wrapper {
     width: 100%;
@@ -26,14 +33,15 @@
     // font-weight: 600; change this weight to get closer tp mock up
     @include m-subHeader;
     color: $Silver;
-    padding-bottom: 0.5rem;
+    padding: 1rem 0rem;
   }
   &__thumbnail-img {
     height: 10rem;
+    width: 18rem;
     object-fit: fill;
     border-radius: 0.3125rem;
     @include tablet-query {
-      width: 60%;
+      width: 25rem;
       height: 15rem;
     }
   }
@@ -73,10 +81,11 @@
     flex-direction: column;
     align-items: center;
     @include tablet-query {
-      flex-direction: row;
+      flex-direction: row-reverse;
       gap: 3rem;
-      border-top: 1px solid $Mercury;
+      border-top: 2px solid $Mercury;
       margin-top: 1rem;
+      justify-content: flex-start;
     }
   }
 
@@ -105,5 +114,9 @@
     border: none;
     padding-top: 1.5rem;
     color: $BrainFlix-Blue;
+  }
+  &__alert {
+    padding-top: 10rem;
+    margin-top: 1rem;
   }
 }

@@ -3,58 +3,95 @@ import "../../styles/partials/_globals.scss";
 import "../Upload/Upload.scss";
 import thumbnail from "../../assets/images/Upload-video-preview.jpg";
 import uploadIcon from "../../assets/icons/upload.svg";
+import Alert from "@mui/material/Alert";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 function Upload() {
-  // attempt to get pop-up
+  const alert = (
+    <Alert severity="success">Upload Successful — check it out!</Alert>
+  );
+  const navigate = useNavigate();
 
-  //const handleSubmit = (event) => {
-  //   event.preventDefault();
+  const [alertActive, setAlertActive] = useState(false);
 
-  //     <h1>PLEASE FILL OUT ALL FIELDS 🕵🏽‍♂️ </h1>
+  function HideAlert() {
+    return <div></div>;
+  }
+  function ShowAlert() {
+    return alert;
+  }
 
-  // };
+  function CheckAlert(props) {
+    const isAlert = props.isAlert;
+    if (isAlert) {
+      return <ShowAlert />;
+    }
+    return <HideAlert />;
+  }
+
+  const alertClickHandler = (e) => {
+    e.preventDefault();
+    setAlertActive(true);
+    setTimeout(() => {
+      setAlertActive(false);
+      navigate("/");
+    }, 1500);
+  };
 
   return (
     <section className="upload">
       <h1 className="upload__heading">Upload Video</h1>
+      <div className="upload__desktop-wrapper">
+        <div className="upload__thumbnail-wrapper">
+          <span className="upload__thumbnail-heading">VIDEO THUMBNAIL</span>
+          <img src={thumbnail} alt="" className="upload__thumbnail-img" />
+        </div>
 
-      <div className="upload__thumbnail-wrapper">
-        <span className="upload__thumbnail-heading">VIDEO THUMBNAIL</span>
-        <img src={thumbnail} alt="" className="upload__thumbnail-img" />
+        <form
+          className="upload__form"
+          // onSubmit={handleSubmit}>
+        >
+          <label htmlFor="upload-title" className="upload__title-label">
+            TITLE YOUR VIDEO
+            <input
+              name="upload-title"
+              placeholder="Add a title to your video"
+              type="text"
+              className="upload__title-input"
+            />
+          </label>
+
+          <label
+            htmlFor="upload-description"
+            className="upload__description-label"
+          >
+            ADD A VIDEO DESCRIPTION
+            <input
+              name="upload-description"
+              placeholder="Add a description to your video"
+              type="text"
+              className="upload__description-input"
+            />
+          </label>
+        </form>
       </div>
-
-      <form
-        className="upload__form"
-        // onSubmit={handleSubmit}>
-      >
-        <label htmlFor="" className="upload__title-label">
-          TITLE YOUR VIDEO
-          <input
-            placeholder="Add a title to your video"
-            type="text"
-            className="upload__title-input"
-          />
-        </label>
-
-        <label htmlFor="" className="upload__description-label">
-          ADD A VIDEO DESCRIPTION
-          <input
-            placeholder="Add a description to your video"
-            type="text"
-            className="upload__description-input"
-          />
-        </label>
-        <div className="upload__btn-wrapper">
-          <button className="upload__publish-btn" type="submit">
+      <div className="upload__btn-wrapper">
+        <Link to="/">
+          <button
+            className="upload__publish-btn"
+            type="submit"
+            onClick={alertClickHandler}
+          >
             <img src={uploadIcon} />
             <span>Publish</span>
           </button>
-
-          <button className="upload__cancel-btn" type="reset">
-            CANCEL
-          </button>
-        </div>
-      </form>
+        </Link>
+        <CheckAlert className="upload__alert" isAlert={alertActive} />
+        <button className="upload__cancel-btn" type="submit">
+          CANCEL
+        </button>
+      </div>
     </section>
   );
 }

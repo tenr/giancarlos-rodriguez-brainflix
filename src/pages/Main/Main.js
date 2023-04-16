@@ -10,6 +10,7 @@ import VideoDetails from "../../components/VideoDetails/VideoDetails";
 import CommentSection from "../../components/Comments/CommentSection";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import "./Main.scss";
 
 /* ---------------------------------- */
 /* -------- API BASE & KEY ---------- */
@@ -17,9 +18,6 @@ import { useParams } from "react-router-dom";
 const BaseUrl = "https://project-2-api.herokuapp.com/videos";
 const apiKey = "?api_key=a2bb68e4-4efe-4f57-aef9-236c3b30f14a";
 
-/* ---------------------------------- */
-/* ------ FUNCTION COMPONENT -------- */
-/* ---------------------------------- */
 function Main() {
   const [selectedVideo, setSelectedVideo] = useState({});
   const [videos, setVideos] = useState([{ id: 1 }]);
@@ -63,11 +61,23 @@ function Main() {
   /* ---------------------------------- */
   return (
     <>
-      <div>
+      <div className="components__video">
         <Video selectedVideo={selectedVideo} />
-        <VideoDetails selectedVideo={selectedVideo} />
-        <CommentSection selectedVideo={selectedVideo} />
-        <SuggestedList videos={videos} />
+      </div>
+      <div className="components">
+        <div className="components__left">
+          <div className="components__video-details">
+            <VideoDetails selectedVideo={selectedVideo} />
+          </div>
+
+          <div>
+            <CommentSection selectedVideo={selectedVideo} />
+          </div>
+        </div>
+
+        <div className="components__suggested">
+          <SuggestedList videos={videos} />
+        </div>
       </div>
     </>
   );

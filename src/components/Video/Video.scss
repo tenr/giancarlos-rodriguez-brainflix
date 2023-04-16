@@ -1,7 +1,15 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
 .video {
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   width: 100%;
+  @include desktop-query {
+    margin-bottom: 0rem;
+  }
 
   &__player {
     object-fit: contain;

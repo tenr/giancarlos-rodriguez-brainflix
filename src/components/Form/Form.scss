@@ -40,9 +40,14 @@
     outline: none;
     border: 1px solid $Mercury;
     border-radius: 0.25rem;
+    background-color: $Alabaster;
+    padding-top: 0.15rem;
     @include tablet-query {
       height: 2.25rem;
       width: 23rem;
+    }
+    @include desktop-query {
+      width: 30rem;
     }
     &::placeholder {
       color: $BrainFlix-Black;
@@ -50,7 +55,7 @@
       padding-left: 0.5rem;
     }
     &:focus {
-      outline: 1px solid $BrainFlix-Black;
+      outline: 1px solid $Mercury;
       border: none;
     }
   }

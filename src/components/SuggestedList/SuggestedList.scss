@@ -8,6 +8,9 @@
   @include tablet-query {
     margin: 0rem 2rem;
   }
+  @include desktop-query {
+    padding-top: 1rem;
+  }
 
   &__heading {
     color: $Silver;
