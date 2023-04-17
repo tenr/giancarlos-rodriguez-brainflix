@@ -9,12 +9,18 @@
   //add a border bottom to the header to get rid of this red
   border-top: 2px solid $Mercury;
   margin-top: 1rem;
+  @include desktop-query {
+    padding: 0rem 8rem;
+  }
   &__heading {
     @include m-pageHeader;
     // font-weight: 600; change this weight to get closer tp mock up
     padding-bottom: 1rem;
-
     border-bottom: 2px solid $Mercury;
+    @include desktop-query {
+      padding-top: 1rem;
+      @include pageHeader;
+    }
   }
   &__desktop-wrapper {
     @include desktop-query {
@@ -27,6 +33,9 @@
     flex-direction: column;
     @include tablet-query {
       align-content: flex-start;
+    }
+    @include desktop-query {
+      width: 42%;
     }
   }
   &__thumbnail-heading {
@@ -59,14 +68,20 @@
     background-color: $Alabaster;
     border-radius: 0.25rem;
     padding-left: 0.5rem;
+    @include desktop-query {
+      width: 38rem;
+    }
   }
+
   &__description-input {
     height: 5rem;
     // padding-top: 1rem;
   }
-  &__description-input::placeholder {
+  &__description-input::placeholder,
+  &__title-input::placeholder {
     align-self: flex-start;
     padding-left: 0.5rem;
+    color: $BrainFlix-Black;
   }
   &__title-label,
   &__description-label {
@@ -104,6 +119,10 @@
     border: none;
     border-radius: 0.25rem;
     margin-top: 1rem;
+    @include desktop-query {
+      width: 5rem;
+      gap: 1.2rem;
+    }
     &:hover {
       background-color: $BrainFlix-DarkBlue;
     }
@@ -114,6 +133,9 @@
     border: none;
     padding-top: 1.5rem;
     color: $BrainFlix-Blue;
+    @include desktop-query {
+      width: 5rem;
+    }
   }
   &__alert {
     padding-top: 10rem;

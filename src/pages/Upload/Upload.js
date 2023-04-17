@@ -84,7 +84,7 @@ function Upload() {
             onClick={alertClickHandler}
           >
             <img src={uploadIcon} />
-            <span>Publish</span>
+            <span>PUBLISH</span>
           </button>
         </Link>
         <CheckAlert className="upload__alert" isAlert={alertActive} />
