@@ -20,14 +20,16 @@ const apiKey = "?api_key=a2bb68e4-4efe-4f57-aef9-236c3b30f14a";
 
 function Main() {
   const [selectedVideo, setSelectedVideo] = useState({});
+  //setting list to start at second index of the fetched array
   const [videos, setVideos] = useState([{ id: 1 }]);
   const params = useParams();
   // console.log(params);
 
   //This is the fetch for the video list on MOUNT and if params change
+  //params are set as a dependecy the useEffect hooks second arguement
   useEffect(() => {
     //fetch all videos
-    axios.get(`${BaseUrl}${apiKey}`).then((response) => {
+    axios.get(`http://localhost:8080/videos/`).then((response) => {
       //once we have response, we need to filter out a "selected" video
       const filteredData = response.data.filter((video) => {
         //if the URL has an ID, that ID now represents our "selected" video
@@ -42,7 +44,7 @@ function Main() {
       setVideos(filteredData);
       //if URL has an id, we fetch the details for that id
       if (params.id) {
-        axios.get(`${BaseUrl}/${params.id}${apiKey}`).then((video) => {
+        axios.get(`http://localhost:8080/videos/${params.id}`).then((video) => {
           setSelectedVideo(video.data);
         });
         //if the URL does not have an id, we fetch the details for the first video from the initial response.

@@ -4,14 +4,12 @@ import "./CommentSection.scss";
 import Form from "../Form/Form";
 
 function CommentSection({ selectedVideo }) {
-  //destructruing again to get the array of comments
+  //destructruing selectedVideo to get the array of comments
   const { comments } = selectedVideo;
 
   return (
     <section className="comments">
       {/* passing in a prop called commentLength and passing in the value of {comments.length} to just have the length of this array */}
-      {/* add this later */}
-      {/* commentLength={comments.length} */}
       <Form commentLength={comments && comments?.length} />
       {comments &&
         comments?.map((comment) => (
