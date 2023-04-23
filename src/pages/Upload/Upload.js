@@ -32,11 +32,16 @@ function Upload() {
 
   const alertClickHandler = (e) => {
     e.preventDefault();
+
+    //grab data from form
+    //console log the data
+    //then run axios post
+    //this should add the posted video to the video.json
     setAlertActive(true);
     setTimeout(() => {
       setAlertActive(false);
       navigate("/");
-    }, 1500);
+    }, 1900);
   };
 
   return (
@@ -50,7 +55,7 @@ function Upload() {
 
         <form
           className="upload__form"
-          // onSubmit={handleSubmit}>
+          // onSubmit={handleSubmit}
         >
           <label htmlFor="upload-title" className="upload__title-label">
             TITLE YOUR VIDEO
