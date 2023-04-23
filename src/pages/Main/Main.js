@@ -15,8 +15,8 @@ import "./Main.scss";
 /* ---------------------------------- */
 /* -------- API BASE & KEY ---------- */
 /* ---------------------------------- */
-const BaseUrl = "https://project-2-api.herokuapp.com/videos";
-const apiKey = "?api_key=a2bb68e4-4efe-4f57-aef9-236c3b30f14a";
+// const BaseUrl = "https://project-2-api.herokuapp.com/videos";
+// const apiKey = "?api_key=a2bb68e4-4efe-4f57-aef9-236c3b30f14a";
 
 function Main() {
   const [selectedVideo, setSelectedVideo] = useState({});
@@ -43,17 +43,18 @@ function Main() {
       //set state for all videos
       setVideos(filteredData);
       //if URL has an id, we fetch the details for that id
+      ///VIDEO DATA IS NOT BEING PASSED FOR the NeW VIDEO TO DISPLAY INFO
       if (params.id) {
-        axios.get(`http://localhost:8080/videos/${params.id}`).then((video) => {
-          setSelectedVideo(video.data);
+        axios.get(`http://localhost:8080/videos/${params.id}`).then((res) => {
+          console.log(res.data);
+          setSelectedVideo(res.data);
         });
         //if the URL does not have an id, we fetch the details for the first video from the initial response.
       } else {
-        axios
-          .get(`${BaseUrl}/${response.data[0].id}${apiKey}`)
-          .then((video) => {
-            setSelectedVideo(video.data);
-          });
+        axios.get(`http://localhost:8080/videos`).then((videos) => {
+          // console.log(videos.data);
+          setSelectedVideo(videos.data[0]);
+        });
       }
     });
   }, [params.id]);

@@ -14,6 +14,10 @@ function Header() {
   // };
   return (
     <header className="header">
+      {/* <img
+        src="http://localhost:8080/videos/image9.jpeg"
+        alt="Image Description"
+      ></img> */}
       <nav className="header__nav">
         <div className="header__logo">
           <Link to="/">

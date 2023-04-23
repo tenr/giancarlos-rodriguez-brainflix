@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 import "../../styles/partials/_globals.scss";
 import "../Upload/Upload.scss";
 import thumbnail from "../../assets/images/Upload-video-preview.jpg";
 import uploadIcon from "../../assets/icons/upload.svg";
 import Alert from "@mui/material/Alert";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 
 function Upload() {
   const alert = (
@@ -13,35 +13,43 @@ function Upload() {
   );
   const navigate = useNavigate();
 
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
   const [alertActive, setAlertActive] = useState(false);
+  const imgUrl = "image9.jpeg";
 
-  function HideAlert() {
-    return <div></div>;
-  }
-  function ShowAlert() {
-    return alert;
-  }
+  //changes the state variables using attribute onChange to call this function
+  const handleTitleChange = (event) => {
+    setTitle(event.target.value);
+  };
 
-  function CheckAlert(props) {
-    const isAlert = props.isAlert;
-    if (isAlert) {
-      return <ShowAlert />;
-    }
-    return <HideAlert />;
-  }
+  const handleDescriptionChange = (event) => {
+    setDescription(event.target.value);
+  };
 
   const alertClickHandler = (e) => {
     e.preventDefault();
-
-    //grab data from form
-    //console log the data
-    //then run axios post
-    //this should add the posted video to the video.json
-    setAlertActive(true);
-    setTimeout(() => {
-      setAlertActive(false);
-      navigate("/");
-    }, 1900);
+    const newVideo = {
+      title: title,
+      description: description,
+      image: imgUrl,
+    };
+    // log the form data
+    console.log(newVideo);
+    // post the form data to the server
+    axios
+      .post("http://localhost:8080/videos", newVideo)
+      .then((response) => {
+        setAlertActive(true);
+        console.log(response);
+        setTimeout(() => {
+          setAlertActive(false);
+          navigate("/");
+        }, 1900);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -53,10 +61,7 @@ function Upload() {
           <img src={thumbnail} alt="" className="upload__thumbnail-img" />
         </div>
 
-        <form
-          className="upload__form"
-          // onSubmit={handleSubmit}
-        >
+        <form className="upload__form" onSubmit={alertClickHandler}>
           <label htmlFor="upload-title" className="upload__title-label">
             TITLE YOUR VIDEO
             <input
@@ -64,6 +69,8 @@ function Upload() {
               placeholder="Add a title to your video"
               type="text"
               className="upload__title-input"
+              value={title}
+              onChange={handleTitleChange}
             />
           </label>
 
@@ -77,6 +84,8 @@ function Upload() {
               placeholder="Add a description to your video"
               type="text"
               className="upload__description-input"
+              value={description}
+              onChange={handleDescriptionChange}
             />
           </label>
         </form>
@@ -88,12 +97,16 @@ function Upload() {
             type="submit"
             onClick={alertClickHandler}
           >
-            <img src={uploadIcon} />
+            <img src={uploadIcon} alt="" />
             <span>PUBLISH</span>
           </button>
         </Link>
-        <CheckAlert className="upload__alert" isAlert={alertActive} />
-        <button className="upload__cancel-btn" type="submit">
+        {alertActive && (
+          <Alert className="upload__alert" severity="success">
+            Upload Successful — check it out!
+          </Alert>
+        )}
+        <button className="upload__cancel-btn" type="button">
           CANCEL
         </button>
       </div>

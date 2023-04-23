@@ -6,7 +6,7 @@ function Video({ selectedVideo }) {
     <section className="video">
       <video
         className="video__player"
-        poster={selectedVideo?.image}
+        poster={"http://localhost:8080/videos/" + selectedVideo?.image}
         controls
       ></video>
     </section>
