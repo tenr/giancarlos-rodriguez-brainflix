@@ -45,7 +45,7 @@ function Upload() {
         setTimeout(() => {
           setAlertActive(false);
           navigate("/");
-        }, 1900);
+        }, 1800);
       })
       .catch((error) => {
         console.log(error);

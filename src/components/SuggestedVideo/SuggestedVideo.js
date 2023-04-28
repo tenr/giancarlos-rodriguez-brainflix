@@ -13,7 +13,7 @@ function SuggestedVideo({ video }) {
             className="card__image"
             //harcoding the url to the backend
             src={"http://localhost:8080/videos/" + video.image}
-            alt="image description"
+            alt={video.title}
           />
         </div>
         <div className="card__right">
